@@ -1,0 +1,66 @@
+{
+"Nápoje":
+	{
+	"Alkoholické nápoje":
+		{
+		"Pivo":
+			[{"nazev":"Pilsner Urquell","mnozstvi":0.5,"cena":42},
+			 {"nazev":"Pilsner Urquell","mnozstvi":0.3,"cena":29},
+			 {"nazev":"Kozel černý lahev","mnozstvi":0.5,"cena":32},
+			 {"nazev":"Birell 0,5 L tmavý Lahev","mnozstvi":0.5,"cena":37},
+		 	 {"nazev":"Birell 0,5 l lahev","mnozstvi":0.5,"cena":32}],
+		"Víno":
+			[{"nazev":"Lambrusco","mnozstvi":0.2,"cena":44},
+			 {"nazev":"Víno bílé lahev","mnozstvi":0.7,"cena":150},
+			 {"nazev":"Víno červené lahev","mnozstvi":0.7,"cena":150}],
+		
+		"Destiláty":
+			[{"nazev":"Vodka Finlandia","mnozstvi":0.04,"cena":55},
+			 {"nazev":"Tullamore Dew","mnozstvi":0.04,"cena":60},
+			 {"nazev":"Tequila Olmeca zlatá","mnozstvi":0.04,"cena":65}]
+		},
+	"Nealko":
+		{
+		"Džusy":
+			[{"nazev":"Fresh Orange Juice","mnozstvi":0.2,"cena":55}],
+		"Limonády":
+			[{"nazev":"Sprite","mnozstvi":0.3,"cena":33},
+			 {"nazev":"Orangina","mnozstvi":0.25,"cena":36},
+			 {"nazev":"Kofola","mnozstvi":0.5,"cena":34}],
+		"Káva a čaj":
+			[{"nazev":"Turecká káva","mnozstvi":null,"cena":35},
+			 {"nazev":"Lungo","mnozstvi":"7g","cena":35},
+			 {"nazev":"Latte Macchiato","mnozstvi":null,"cena":45}],
+		"Voda":
+			[{"nazev":"Voda sklo","mnozstvi":0.25,"cena":30},
+			 {"nazev":"Minerálka San Pellegrino","mnozstvi":0.75,"cena":79}],
+		"Energetické nápoje":
+			[{"nazev":"Red Bull","mnozstvi":0.25,"cena":59}]
+		 }
+	},
+"Jídelní menu":
+	{
+	"Burgry":
+		[{"nazev":"Texas Burger","popis":"maso, karamelizovaná cibulka, cheddar, rajče, hořčice, kečup, cibulové kroužky","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":155,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4489.jpg"},
+		 {"nazev":"Steakhouse Burger","popis":"burger plněný vynikajícím steakovým masem na čerstvém římském salátu v rozpečené housce","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":199,"cena velky":279,"img url":"http://www.delish.cz/images/thb_view/21-img_4607.jpg"},
+		 {"nazev":"Mountain Burger","popis":"dvojitá porce ementálu, bramborová placka, maso, majonéza, kečup, salát, rajče, okurčičky a cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":155,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4581.jpg"},
+		 {"nazev":"Jack Daniel´s Burger","popis":"maso, cheddar, salát, Jack Daniel´s omáčka, hořčice, karamelizovaná cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":150,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4534.jpg"},
+		 {"nazev":"Cheeseburger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":135,"cena velky":175,"img url":"http://www.delish.cz/images/thb_view/21-img_4442.jpg"},
+		 {"nazev":"French Burger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":150,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4574.jpg"}],	
+	"Extras do burgru":
+		[{"nazev":"Vejce Sunrice","cena":29},
+		 {"nazev":"Slanina","cena":29},
+		 {"nazev":"Plísňový sýr","cena":29},
+		 {"nazev":"Karamelizovaná cibulka","cena":29},
+		 {"nazev":"Jalapenos","cena":29},
+		 {"nazev":"Cheddar","cena":29},
+		 {"nazev":"Grilované houbičky","cena":29}],
+	"Saláty":
+		[{"nazev":"Zahradní salátek","slozeni":"mix ledového salátu a rajčat, ovoněný olivovým olejem a špetkou koření, doporučujeme místo tradiční přílohy.","cena":45,"img url":"http://www.delish.cz/images/thb_view/21-s1.jpg"},
+		 {"nazev":"Caesar salát","slozeni":"salát z římského salátu dle tradiční receptury doplněný o domácí caesar dresink, voňavý parmezán, křupavé krutány a kuřecí steak, vhodný jako hlavní chod.","cena":145,"img url":"http://www.delish.cz/images/thb_view/21-img_8694.jpg"}],
+	"Dezerty":
+		[{"nazev":"Zmrzlinový pohár","slozeni":"Zmrzlina se šlehačkou a polevou","cena":55,"img url":"http://www.delish.cz/images/thb_view/"},
+		 {"nazev":"French toast","slozeni":"Tradiční severoamerický toast obalovaný ve vajíčku se skořicovo-cukrovým zábalem.","cena":59,"img url":"http://www.delish.cz/images/thb_view/21-img_0415.jpg"}]
+	}
+}
+
