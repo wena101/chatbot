@@ -34,7 +34,7 @@ export class ConversationService {
 			text : text
 		}
 	  };
-	  return Observable.of( { output : { text : 'Mocked response uncomment in conversation.service.ts' }}).share();
+	  return Observable.of( { output : { text : 'echo:' + text +' (mocked response, uncomment in conversation.service.ts)' }}).share();
 	  //return this.http.post(this.endpoint, JSON.stringify(data), {headers: this.headers}).map(res => res.json()).share();	 
   }
 }

@@ -1,6 +1,6 @@
 <div>
 <div class="chat col-xs-8">   
-    <div class="chat-history">
+    <div class="chat-history" #list [scrollTop]="list.scrollHeight">
         <ul class="chat-ul">
           <li class="clearfix" *ngFor="let msg of messages"><!--pro kazdou message(promenna z componenet.ts), fieldy fromMe(bool), text(string)-->
             <div class="message-data" [class.align-right]="!msg.fromMe"><!--class.<class>="<expression>" podmninena trida-->
@@ -14,9 +14,13 @@
 	</div>
 </div>
 <div class="col-xs-12">
-<form>
-	<input type="text">
-	<input type="submit" value="odeslat">
-</form>
+	<div>
+		<input 	type="text" 
+				name="messageText"
+				placeholder="zprava pro Watsona..."
+				(keydown.enter)="onEnter($event)"
+				[(ngModel)]="draft.text">
+		<button (click)="onEnter($event)">odeslat</button>
+	</div>
 </div>
 </div>

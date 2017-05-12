@@ -13,20 +13,28 @@ import 'rxjs/Rx';
 
 export class ChatWindowComponent implements OnInit {
 	
-  messages: ChatMessage[] = [ 
-  {fromMe : false, text : "Dobrý den, co si dáte?"}, 
-  {fromMe : true, text : "Já bych si dal Texas burger a colu."},
-  {fromMe : false, text : "ble"},
-  {fromMe : true, text : "děkuji, nashledanou"}  ];
+  messages: Array<ChatMessage> = [ 
+  {fromMe : false, text : "Dobrý den, co si dáte?"} ];
+  
+  draft : ChatMessage = { fromMe : true, text : "" };
 
   constructor(private conversationService: ConversationService) { }
 
   ngOnInit() {
-	  this.conversationService.getWatsonResponse("bla").subscribe(res => { 
-		//console.log('resp test: \n' + res);
-		console.log(res);
-		this.messages[2].text = res.output.text
-	  });
   }
-
+  
+  onEnter(event: any): void {
+    this.sendMessage();
+    event.preventDefault();
+  }
+  
+  sendMessage(): void {
+	 this.messages.push(this.draft);
+	 this.conversationService.getWatsonResponse(this.draft.text).subscribe(res => {
+		console.log(res);
+		this.messages.push({ fromMe : false, text : res.output.text });
+	  });
+	 this.draft = { fromMe : true, text : "" };
+  }
+  
 }

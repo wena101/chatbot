@@ -9,6 +9,8 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 .chat .chat-history {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
+  height: 80vh;
+  overflow:hidden; overflow-y:scroll;
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
