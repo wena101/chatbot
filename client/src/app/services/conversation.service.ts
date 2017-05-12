@@ -20,9 +20,7 @@ export class ConversationService {
 //	});
 	private context = null;
 	private readonly  endpoint : string = 'http://localhost:3000/watson/message';
-	headers = new Headers({
-		'Content-Type': 'application/json'
-	});
+	headers = new Headers({'Content-Type': 'application/json'});
   
   constructor(protected http: Http) { }
 
@@ -34,7 +32,7 @@ export class ConversationService {
 			text : text
 		}
 	  };
-	  return Observable.of( { output : { text : 'echo:' + text +' (mocked response, uncomment in conversation.service.ts)' }}).share();
+	  return Observable.of( { output : { text : ['Chcete !list:data/menu? (mocked from conversation.service.ts)'] }}).share();
 	  //return this.http.post(this.endpoint, JSON.stringify(data), {headers: this.headers}).map(res => res.json()).share();	 
   }
 }

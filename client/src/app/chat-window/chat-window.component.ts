@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatMessage } from '../chat-message';
 import { ConversationService } from '../services/conversation.service';
+import { MenuDataService } from '../services/menu-data.service';
 import 'rxjs/Rx';
 
 @Component({
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
   styleUrls: ['./chat-window.component.css'],
-  providers: [ConversationService]
+  providers: [ConversationService, MenuDataService]
 })
 
 
 export class ChatWindowComponent implements OnInit {
 	
-  messages: Array<ChatMessage> = [ 
-  {fromMe : false, text : "Dobrý den, co si dáte?"} ];
-  
+  messages: Array<ChatMessage> = [  {fromMe : false, text : "Dobrý den, co si dáte?"} ];
   draft : ChatMessage = { fromMe : true, text : "" };
 
-  constructor(private conversationService: ConversationService) { }
+  constructor(private conversationService: ConversationService, private menuDataService: MenuDataService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   
   onEnter(event: any): void {
     this.sendMessage();
@@ -31,8 +29,9 @@ export class ChatWindowComponent implements OnInit {
   sendMessage(): void {
 	 this.messages.push(this.draft);
 	 this.conversationService.getWatsonResponse(this.draft.text).subscribe(res => {
-		console.log(res);
-		this.messages.push({ fromMe : false, text : res.output.text });
+		 console.log(res.output.text[0]);
+		this.menuDataService.evaluateList(res.output.text[0]).subscribe(parsedReply =>
+		{ this.messages.push( { fromMe : false, text : parsedReply }) });
 	  });
 	 this.draft = { fromMe : true, text : "" };
   }
