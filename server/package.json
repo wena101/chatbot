@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "cors": "^2.8.3",
     "express": "^4.15.2",
+    "fs": "0.0.1-security",
     "watson-developer-cloud": "^2.31.1"
   }
 }
