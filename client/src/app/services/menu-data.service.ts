@@ -27,7 +27,7 @@ export class MenuDataService {
 				for (var key in res_list) {
 					 list += res_list[key].fullName + ', ';
 				}
-				list = list.slice(0, -2).replace(/,(?=[^,]*$)/, ' nebo');
+				list = list.slice(0, -2).replace(/,(?=[^,]*$)/, ' a');
 				return watsonResp.replace(regexp, list);
 			});
 		}
