@@ -50,14 +50,15 @@ export class MenuDataService {
 				 {
 					 if(entity.entity == 'polozka')
 					 {
+						 const iq = quantity;
 						queries.push(
 							this.evaluateItem(entity.value).map(item => {
 								if(item != null)
 								{
-									for(let i : number = quantity; i > 0; i--) 
+									for(let i : number = iq; i > 0; i--) 
 										this.cart.addItem(item);
 								}
-								ordered.push(quantity + 'x ' + item.fullName);
+								ordered.push(iq + 'x ' + item.fullName);
 							})
 						);
 						quantity = 1;
