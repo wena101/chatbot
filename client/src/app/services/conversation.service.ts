@@ -19,7 +19,7 @@ export class ConversationService {
 //	  version: 'v1'
 //	});
 	private context = null;
-	private mock = false;
+	private mock = true;
 	private readonly  endpoint : string = 'http://localhost:3000/watson/message';
 	headers = new Headers({'Content-Type': 'application/json'});
   
@@ -40,7 +40,7 @@ export class ConversationService {
 		  entities: [ { entity : "polozka_mnozstvi", value : "2" }, { entity : "polozka", value : "texas_m" }, 
 		  { entity : "polozka_mnozstvi", value : "3" },{ entity : "polozka_mnozstvi", value : "5" },
 		  { entity : "polozka", value : "houby" }, { entity : "polozka", value : "houby" } ],
-		  output : { text : ['Chcete !show:texas_m (mocked from conversation.service.ts)'] }}).share();
+		  output : { text : ['OBjenavam !order (mocked from conversation.service.ts)'] }}).share();
 	  }
 	  else return this.http.post(this.endpoint, JSON.stringify(data), {headers: this.headers}).map(res => res.json()).share();	 
   }
