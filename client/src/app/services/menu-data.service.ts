@@ -66,13 +66,11 @@ export class MenuDataService {
 					 else if(entity.entity == 'polozka_mnozstvi') quantity = entity.value;
 				 }
 				 return Observable.forkJoin(queries, (data: any[]) => { 
-					let text : string = '';
-					if(ordered.length == 0) text = 'Omlouvam se ale nepodarilo se mi najit zadnou vec v menu';
-					else if (ordered.length == 1) text = 'Objednali jste si: ' + ordered + ', date si jeste neco?';
-					else {
-						text = 'Objednali jste si: ' + ordered.join(', ').replace(/,(?=[^,]*$)/, ' a') + ', date si jeste neco?';
-					}
-					return {fromMe : false,  text : text }; 
+					var regexp = new RegExp(String.raw`!order:([\w/]+)`);
+					var match = regexp.exec(text);
+					let order_list : string = ordered.join(', ').replace(/,(?=[^,]*$)/, ' a');
+					console.log(order_list);
+					return {fromMe : false,  text : text.replace(/(!order)/, order_list) }; 
 				 });
 				 //return this.evaluateList(res.output.text[0]).map(parsedReply => { return {fromMe : false, text : parsedReply}; } );
 			 }
