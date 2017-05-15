@@ -4,6 +4,7 @@ import { Http, Response, Headers, JsonpModule } from '@angular/http';
 import { Item } from '../item';
 import { IMenuItem } from '../imenu-item';
 import { ChatMessage } from '../chat-message';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @Injectable()
 export class MenuDataService {
@@ -12,7 +13,7 @@ export class MenuDataService {
 	private readonly  itemsEndpoint : string = 'http://localhost:3000/items/';
 	headers = new Headers({'Content-Type': 'application/json'});
 
-	constructor(protected http: Http) { }
+	constructor(protected http: Http, protected cart: ShoppingCartService) { }
 
 	listItems(path: string) : Observable<{ [name: string]: Item; } >
 	{
@@ -24,21 +25,62 @@ export class MenuDataService {
 		const intent = res.intents.reduce(function(prev, current) { return (prev.confidence > current.confidence) ? prev : current});
 		console.log('max intent: ' + JSON.stringify(intent));
 		console.log(res.output.text[0]);
+		let text = res.output.text[0];
 		switch(intent.intent)
 		{
 			case 'item_query': {
-				return this.evaluateItem(res.output.text[0]).map(item => { 
-					return {fromMe : false, text : 'Podarilo se mi najit:', item : item}; 
-				});
+				let regexp = new RegExp(String.raw`!show:([\w/]+)`);
+				if(regexp.test(text))
+				{
+					let match = regexp.exec(text);
+					return this.evaluateItem(match[1]).map(item => { 
+						return {fromMe : false, text : 'Podarilo se mi najit:', item : item}; 
+					});
+				}
+				else return Observable.of({fromMe : false, text : 'Polozku se nepodarilo najit', item : null} );				
 			 }
 			 case 'menu_query': {
 				 return this.evaluateList(res.output.text[0]).map(parsedReply => { return {fromMe : false, text : parsedReply}; } );
+			 }
+			 case 'order_item': {
+				 let quantity : number = 1;
+				 let ordered : string[] = [];
+				 let queries : Observable<void>[] = [];
+				 for (let entity of res.entities)
+				 {
+					 if(entity.entity == 'polozka')
+					 {
+						 const iq = quantity;
+						queries.push(
+							this.evaluateItem(entity.value).map(item => {
+								if(item != null)
+								{
+									for(let i : number = iq; i > 0; i--) 
+										this.cart.addItem(item);
+								}
+								ordered.push(iq + 'x ' + item.fullName);
+							})
+						);
+						quantity = 1;
+					 }
+					 else if(entity.entity == 'polozka_mnozstvi') quantity = entity.value;
+				 }
+				 return Observable.forkJoin(queries, (data: any[]) => { 
+					let text : string = '';
+					if(ordered.length == 0) text = 'Omlouvam se ale nepodarilo se mi najit zadnou vec v menu';
+					else if (ordered.length == 1) text = 'Objednali jste si: ' + ordered + ', date si jeste neco?';
+					else {
+						text = 'Objednali jste si: ' + ordered.join(', ').replace(/,(?=[^,]*$)/, ' a') + ', date si jeste neco?';
+					}
+					return {fromMe : false,  text : text }; 
+				 });
+				 //return this.evaluateList(res.output.text[0]).map(parsedReply => { return {fromMe : false, text : parsedReply}; } );
 			 }
 		}
 		 
 		return Observable.of({fromMe : false, text : "code flow error" });
 	}
-	
+		
 	evaluateList(watsonResp: string) : Observable<string>
 	{
 		var regexp = new RegExp(String.raw`!list:([\w/]+)`);
@@ -57,15 +99,9 @@ export class MenuDataService {
 		else return Observable.of(watsonResp);
 	}
 	
-	evaluateItem(watsonResp: string)  : Observable<IMenuItem>
+	evaluateItem(itemName: string)  : Observable<IMenuItem>
 	{
-		var regexp = new RegExp(String.raw`!show:([\w/]+)`);
-		if(regexp.test(watsonResp))
-		{
-			var match = regexp.exec(watsonResp);
-			return this.http.get(this.itemsEndpoint + match[1], {headers: this.headers}).map(res => res.json()).share();
-		}
-		else return Observable.of(null);
+		return this.http.get(this.itemsEndpoint + itemName, {headers: this.headers}).map(res => res.json()).share();
 	}
 	
 }
