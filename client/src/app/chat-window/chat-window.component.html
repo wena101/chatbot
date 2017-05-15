@@ -8,6 +8,7 @@
             </div><!--podmenych vice trid [ngClass]="{'<class>':<expression>, ... }" -->
             <div [ngClass]="{'message': true, 'you-message': msg.fromMe, 'me-message': !msg.fromMe, 'float-right': !msg.fromMe}">
 			{{msg.text}}
+			<app-menu-item *ngIf="msg.item != null" [item]="msg.item"></app-menu-item>
 			</div>
           </li>
 		</ul>

@@ -14,7 +14,7 @@ import 'rxjs/Rx';
 
 export class ChatWindowComponent implements OnInit {
 	
-  messages: Array<ChatMessage> = [  {fromMe : false, text : "Dobrý den, co si dáte?"} ];
+  messages: Array<ChatMessage> = [  {fromMe : false, text : "Dobrý den, co si dáte?" } ];
   draft : ChatMessage = { fromMe : true, text : "" };
 
   constructor(private conversationService: ConversationService, private menuDataService: MenuDataService) { }
@@ -29,9 +29,9 @@ export class ChatWindowComponent implements OnInit {
   sendMessage(): void {
 	 this.messages.push(this.draft);
 	 this.conversationService.getWatsonResponse(this.draft.text).subscribe(res => {
-		 console.log(res.output.text[0]);
-		this.menuDataService.evaluateList(res.output.text[0]).subscribe(parsedReply =>
-		{ this.messages.push( { fromMe : false, text : parsedReply }) });
+		 this.menuDataService.evaluateMessage(res).subscribe(msg => this.messages.push(msg));
+		//this.menuDataService.evaluateList(res.output.text[0]).subscribe(parsedReply =>
+		//{ this.messages.push( { fromMe : false, text : parsedReply }) });
 	  });
 	 this.draft = { fromMe : true, text : "" };
   }

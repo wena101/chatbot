@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 //import {Angular2AutoScroll} from "angular2-auto-scroll/lib/angular2-auto-scroll.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatWindowComponent,
+    MenuItemComponent,
 	//Angular2AutoScroll
   ],
   imports: [
