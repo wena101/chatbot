@@ -1,7 +1,0 @@
-.slider_box{padding:10px; background:#FFF; box-shadow: 0px 1px 1px rgba(0,0,0,0.51); margin: 0 5px 23px;}
-.slider {width:930px;height: 464px;}
-.items {display:none}
-.pagination {position:absolute;bottom:10px; right:9px; z-index:999;}
-.pagination li {float:left;margin:0 0px 0 8px;}
-.pagination li a{width:26px;height:26px;display:block; background:url(../img/pagination.png) right 0 no-repeat;}
-.pagination li.current a, .pagination li:hover a{ background:url(../img/pagination.png) left 0 no-repeat;}
