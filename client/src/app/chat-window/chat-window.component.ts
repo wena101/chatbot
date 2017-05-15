@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ChatMessage } from '../chat-message';
 import { ConversationService } from '../services/conversation.service';
 import { MenuDataService } from '../services/menu-data.service';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 import 'rxjs/Rx';
 
 @Component({
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
   styleUrls: ['./chat-window.component.css'],
-  providers: [ConversationService, MenuDataService]
+  providers: [ConversationService, MenuDataService, ShoppingCartService]
 })
 
 

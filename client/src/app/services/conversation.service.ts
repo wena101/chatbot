@@ -32,7 +32,10 @@ export class ConversationService {
 			text : text
 		}
 	  };
-	  return Observable.of( { intents: [{intent: "item_query", confidence : 0.578}, {intent: "hello", confidence : 0.25}], output : { text : ['Chcete !show:texas_m (mocked from conversation.service.ts)'] }}).share();
+	  return Observable.of( { 
+	  intents: [{intent: "order_item", confidence : 0.578}, {intent: "hello", confidence : 0.25}], 
+	  entities: [ { entity : "polozka_mnozstvi", value : "2" }, { entity : "polozka", value : "texas_m" }, { entity : "polozka", value : "houby" } ],
+	  output : { text : ['Chcete !show:texas_m (mocked from conversation.service.ts)'] }}).share();
 	  //return this.http.post(this.endpoint, JSON.stringify(data), {headers: this.headers}).map(res => res.json()).share();	 
   }
 }
