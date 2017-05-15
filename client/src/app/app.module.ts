@@ -23,6 +23,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent,ChatWindowComponent]
+  bootstrap: [AppComponent]//,ChatWindowComponent
 })
 export class AppModule { }

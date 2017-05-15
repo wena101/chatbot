@@ -1,27 +1,27 @@
 <div>
-<div class="chat col-xs-8">   
-    <div class="chat-history" #list [scrollTop]="list.scrollHeight">
-        <ul class="chat-ul">
-          <li class="clearfix" *ngFor="let msg of messages"><!--pro kazdou message(promenna z componenet.ts), fieldy fromMe(bool), text(string)-->
-            <div class="message-data" [class.align-right]="!msg.fromMe"><!--class.<class>="<expression>" podmninena trida-->
-              <span class="message-data-name">{{msg.fromMe ? "You" : "Watson"}}</span><!-- dvojte slozene zavorky = js kod-->
-            </div><!--podmenych vice trid [ngClass]="{'<class>':<expression>, ... }" -->
-            <div [ngClass]="{'message': true, 'you-message': msg.fromMe, 'me-message': !msg.fromMe, 'float-right': !msg.fromMe}">
-			{{msg.text}}
-			<app-menu-item *ngIf="msg.item != null" [item]="msg.item"></app-menu-item>
-			</div>
-          </li>
-		</ul>
+	<div class="chat col-xs-8">   
+		<div class="chat-history" #list [scrollTop]="list.scrollHeight">
+			<ul class="chat-ul">
+			  <li class="clearfix" *ngFor="let msg of messages"><!--pro kazdou message(promenna z componenet.ts), fieldy fromMe(bool), text(string)-->
+				<div class="message-data" [class.align-right]="!msg.fromMe"><!--class.<class>="<expression>" podmninena trida-->
+				  <span class="message-data-name">{{msg.fromMe ? "You" : "Watson"}}</span><!-- dvojte slozene zavorky = js kod-->
+				</div><!--podmenych vice trid [ngClass]="{'<class>':<expression>, ... }" -->
+				<div [ngClass]="{'message': true, 'you-message': msg.fromMe, 'me-message': !msg.fromMe, 'float-right': !msg.fromMe}">
+				{{msg.text}}
+				<app-menu-item *ngIf="msg.item != null" [item]="msg.item"></app-menu-item>
+				</div>
+			  </li>
+			</ul>
+		</div>
 	</div>
-</div>
-<div class="col-xs-12">
-	<div>
-		<input 	type="text" 
-				name="messageText"
-				placeholder="zprava pro Watsona..."
-				(keydown.enter)="onEnter($event)"
-				[(ngModel)]="draft.text">
-		<button (click)="onEnter($event)">odeslat</button>
+	<div class="col-xs-12">
+		<div>
+			<input 	type="text" 
+					name="messageText"
+					placeholder="zprava pro Watsona..."
+					(keydown.enter)="onEnter($event)"
+					[(ngModel)]="draft.text">
+			<button (click)="onEnter($event)">odeslat</button>
+		</div>
 	</div>
-</div>
 </div>

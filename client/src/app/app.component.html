@@ -1,57 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Burger restaurace Plzeň | Burgery z kvalitního hovězího masa</title>
-    <meta charset="utf-8">
-    <meta name="abstract" content="">
-	<meta name="author" content="www.tobolka.cz">
-	<meta name="description" content="Burger restaurace Plzeň | Burgery z kvalitního hovězího masa">
-	<meta name="keywords" content="Burger restaurace Plzeň | Burgery z kvalitního hovězího masa">
-
-	<meta name="copyright" content="Copyright (c) 2017">
-
-  <meta property="fb:app_id" content="127271324039001" /> 
-  <meta property="og:type"   content="article" /> 
-  <meta property="og:url"    content="http://www.delish.cz" /> 
-  <meta property="og:title"  content="Burger restaurace Plzeň | Burgery z kvalitního hovězího masa" />
-  <meta property="og:description"  content="BBQ restaurace v Plzni, přijďte ochutnat ty největší a nejšťavnatější Burgery a nejen to! Vše z čerstvého 100 % hovězího." /> 
-  <meta property="og:image"  content="http://delish.cz/soubory/1-sliden3.jpg" />
-	<meta name="robots" content="index,follow">
-	<meta name="rating" content="general">
-  
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
-  
-  <link rel="stylesheet" type="text/css" media="screen" href="/delish/css/stylecss2.css">
-    
-  <link href='/delish/fonts.googleapis.com/csslatin-ext.css' rel='stylesheet' type='text/css' />
-	  
-        <link rel="stylesheet" type="text/css" media="screen" href="/delish/css/tms.css">
-    <script type="text/javascript" src="/delish/js/jquery-1.6.1.min.js"></script>
-    <script type="text/javascript" src="/delish/js/superfish.js"></script>
-	  <script type="text/javascript" src="/delish/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="/delish/js/tms-0.3.js"></script>
-    <script type="text/javascript" src="/delish/js/tms_presets.js"></script>
-    <script type="text/javascript" src="/delish/js/FF-cash.js"></script>
-
-    	<!--[if lt IE 8]>
-   <div style=' clear: both; text-align:center; position: relative;'>
-     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-       <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-    </a>
-  </div>
-<![endif]-->
-    <!--[if lt IE 9]>
-   		<script type="text/javascript" src="//delish/js/html5.js"></script>
-    	<link rel="stylesheet" type="text/css" media="screen" href="//delish/css/ie.css">
-	<![endif]-->
-  <script type="text/javascript" src="/delish/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-  <link rel="stylesheet" href="/delish/js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-  
-
-
-</head>
-<body>
-
 <div class="body_bg">
 	<div class="main">
     <!--==============================header=================================-->
@@ -61,17 +7,17 @@
                     <div class="left_stripe"></div>
                     <div class="rigth_stripe"></div>
                     <div class="navigation">
-                      <a  href="index.html">Home</a>|<a  href="javascript:void(0)">Soutěže</a>|
+                      <a  href="javascript:void(0)" (click)="displayChatbot=false">Home</a>|<a  href="javascript:void(0)">Soutěže</a>|
 					  <a  href="javascript:void(0)">Kdo jsme?</a>|<a class="last" href="javascript:void(0)">Kontakty</a>                    </div>
                     <h1><a class="logo" href="index.html">Burger restaurace Plzeň | Burgery z kvalitního hovězího masa</a></h1>
                     <nav>
                         <ul class="sf-menu">
                             <li  class=""><a  href="javascript:void(0)">Soutěž</a></li>
-<li  class="li"><a  href="javascript:void(0)">Kariéra</a></li>
-<li  class="li"><a  href="javascript:void(0)">Naše menu</a></li>
-<li  class="second_part"><a  href="javascript:void(0)">Nápoje</a></li>
-<li  class="li"><a  href="javascript:void(0)">Galerie</a></li>       
-<li  class="li"><a  href="javascript:void(0)" (click)="displayChatbot=true">Chatbot</a></li>                                                     
+							<li  class="li"><a  href="javascript:void(0)">Kariéra</a></li>
+							<li  class="li"><a  href="javascript:void(0)">Naše menu</a></li>
+							<li  class="second_part"><a  href="javascript:void(0)">Nápoje</a></li>
+							<li  class="li"><a  href="javascript:void(0)">Galerie</a></li>       
+							<li  class="li"><a  href="javascript:void(0)" (click)="displayChatbot=true">Chatbot</a></li>                                                     
                         </ul>
                         <div class="clear"></div>
                     </nav>
@@ -79,10 +25,10 @@
             </div>
             <div class="clear"></div>
         </header>
-  
-            <!--==============================content================================-->
-			<app-chat-window *ngIf="displayChatbot"></app-chat-window>    
+		
+            <!--==============================content================================-->  
 			<app-welcome *ngIf="!displayChatbot"></app-welcome>
+			<app-chat-window *ngIf="displayChatbot"></app-chat-window>  
 	</div>
 </div>
 <!--==============================footer=================================-->
@@ -117,6 +63,4 @@
             </div>
         </div>
     </footer>
-</div>        
-</body>
-</html>
+</div>   
