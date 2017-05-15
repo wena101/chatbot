@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 //import {Angular2AutoScroll} from "angular2-auto-scroll/lib/angular2-auto-scroll.directive";
 
 @NgModule({
@@ -13,6 +14,7 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
     AppComponent,
     ChatWindowComponent,
     MenuItemComponent,
+    WelcomeComponent,
 	//Angular2AutoScroll
   ],
   imports: [

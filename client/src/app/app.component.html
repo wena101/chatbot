@@ -61,16 +61,17 @@
                     <div class="left_stripe"></div>
                     <div class="rigth_stripe"></div>
                     <div class="navigation">
-                      <a  href="index.html">Home</a>|<a  href="http://delish.cz/souteze">Soutěže</a>|<a  href="http://delish.cz/kdo-jsme">Kdo jsme?</a>|<a class="last" href="http://delish.cz/kontakty">Kontakty</a>                    </div>
+                      <a  href="index.html">Home</a>|<a  href="javascript:void(0)">Soutěže</a>|
+					  <a  href="javascript:void(0)">Kdo jsme?</a>|<a class="last" href="javascript:void(0)">Kontakty</a>                    </div>
                     <h1><a class="logo" href="index.html">Burger restaurace Plzeň | Burgery z kvalitního hovězího masa</a></h1>
                     <nav>
                         <ul class="sf-menu">
-                            <li  class=""><a  href="http://delish.cz/souteze">Soutěž</a></li>
-<li  class="li"><a  href="http://delish.cz/kariera">Kariéra</a></li>
-<li  class="li"><a  href="http://delish.cz/menu/burgery">Naše menu</a></li>
-<li  class="second_part"><a  href="http://delish.cz/napoje/limonady">Nápoje</a></li>
-<li  class="li"><a  href="http://delish.cz/fotogalerie">Galerie</a></li>       
-<li  class="li"><a  href="http://delish.cz/fotogalerie">Chatbot</a></li>                                                     
+                            <li  class=""><a  href="javascript:void(0)">Soutěž</a></li>
+<li  class="li"><a  href="javascript:void(0)">Kariéra</a></li>
+<li  class="li"><a  href="javascript:void(0)">Naše menu</a></li>
+<li  class="second_part"><a  href="javascript:void(0)">Nápoje</a></li>
+<li  class="li"><a  href="javascript:void(0)">Galerie</a></li>       
+<li  class="li"><a  href="javascript:void(0)" (click)="displayChatbot=true">Chatbot</a></li>                                                     
                         </ul>
                         <div class="clear"></div>
                     </nav>
@@ -80,22 +81,9 @@
         </header>
   
             <!--==============================content================================-->
-        <section id="content" class="cont_pad">
-            <div class="container_24">
-                <!--<div class="offers_box wrapper">
-                    <div class="grid_24 omega">
-                                                                        
-                    </div>
-                </div>-->
-                <div class="wrapper">
-			<h1>
-  			{{title}}
-			</h1>
-			<app-chat-window></app-chat-window>        
-             
-</div>
-          </div>	
-        </section>            </div>
+			<app-chat-window *ngIf="displayChatbot"></app-chat-window>    
+			<app-welcome *ngIf="!displayChatbot"></app-welcome>
+	</div>
 </div>
 <!--==============================footer=================================-->
 <div class="footer_box">
