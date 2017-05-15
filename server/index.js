@@ -21,6 +21,23 @@ var conversation = new Conversation({
 });
 var data = JSON.parse(fs.readFileSync('../data.json', 'utf8'));
 
+var items = [];
+function flatten(prop, propertyName)
+{
+	if(prop.isLeaf == false)
+	{
+		for(var propName in prop.items) {
+			flatten(prop.items[propName], propName);
+		}
+	}
+	else {
+		//console.log('added ' + propertyName);
+		items[propertyName] = prop;
+	}
+}
+flatten(data, 'data');
+
+
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
@@ -51,10 +68,25 @@ function getProperty(base, path)
 	return prop;
 }
 
-app.get('/data/', function (req, res) {
-	console.log(JSON.stringify(data, ignoreItems, spaces));
+app.get('/items/:item', function (req, res) {
+	makeJson(res);
 	
-	let payload = JSON.stringify(data, ignoreItems, spaces);
+	if(items[req.params.item] != null)
+	{
+		console.log(JSON.stringify(items[req.params.item], null, spaces));
+		let payload = JSON.stringify(items[req.params.item], null, spaces);
+		return res.send(payload);
+	}
+	else {
+		console.log('error: undefined item ' + req.params.item);
+		return res.status(404).send({ error : "item does not exists" } );
+	}
+})
+
+app.get('/data/', function (req, res) {
+	console.log(JSON.stringify(data.items, ignoreItems, spaces));
+	
+	let payload = JSON.stringify(data.items, ignoreItems, spaces);
 	makeJson(res);
 
 	return res.send(payload);
@@ -62,8 +94,8 @@ app.get('/data/', function (req, res) {
 
 app.get('/data/:subcathegory', function (req, res) {
 	makeJson(res);
-	let prop = getProperty(data, [ req.params.subcathegory, "items" ] );
-	if(prop == null) return res.send(404, { error : "item does not exists" } );
+	let prop = getProperty(data.items, [ req.params.subcathegory, "items" ] );
+	if(prop == null) return res.status(404).send({ error : "item does not exists" } );
 	else {
 		console.log(JSON.stringify(prop, ignoreItems, spaces));
 		return res.send(JSON.stringify(prop, ignoreItems, spaces));
@@ -72,7 +104,7 @@ app.get('/data/:subcathegory', function (req, res) {
 
 app.get('/data/:subcathegory/:itemlist', function (req, res) {
 	makeJson(res);
-	let prop = getProperty(data, [ req.params.subcathegory, "items" , req.params.itemlist, "items"] );
+	let prop = getProperty(data.items, [ req.params.subcathegory, "items" , req.params.itemlist, "items"] );
 	if(prop == null) return res.send(404, { error : "item does not exists" } );
 	else {
 		console.log(JSON.stringify(prop, ignoreItems, spaces));
@@ -82,7 +114,7 @@ app.get('/data/:subcathegory/:itemlist', function (req, res) {
 
 app.get('/data/:subcathegory/:subsubcathegory/:item', function (req, res) {
 	makeJson(res);
-	let prop = getProperty(data, [ req.params.subcathegory, "items" , req.params.subsubcathegory, "items" , req.params.item] );
+	let prop = getProperty(data.items, [ req.params.subcathegory, "items" , req.params.subsubcathegory, "items" , req.params.item] );
 	if(prop == null) return res.send(404, { error : "item does not exists" } );
 	else if (prop.isLeaf === true){
 		console.log(JSON.stringify(prop, null, spaces));
@@ -96,7 +128,7 @@ app.get('/data/:subcathegory/:subsubcathegory/:item', function (req, res) {
 
 app.get('/data/:subcathegory/:subsubcathegory/:itemlist/:item', function (req, res) {
 	makeJson(res);
-	let prop = getProperty(data, [ req.params.subcathegory, "items" , req.params.subsubcathegory, "items" , req.params.itemlist, "items", req.params.item] );
+	let prop = getProperty(data.items, [ req.params.subcathegory, "items" , req.params.subsubcathegory, "items" , req.params.itemlist, "items", req.params.item] );
 	if(prop == null) return res.send(404, { error : "item does not exists" } );
 	else {
 		console.log(JSON.stringify(prop, null, spaces));

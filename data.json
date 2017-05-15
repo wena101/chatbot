@@ -1,144 +1,157 @@
 {
-"napoje":
-{
-	"fullName" : "Nápoje",
-	"level" : "category",
+	"fullName" : "data",
+	"level" : "root",
 	"isLeaf":false,
 	"items": 
 	{
-	"alko":
+		"napoje":
 		{
-		"fullName" : "Alkoholické nápoje",
-		"level" : "subcategory",
-		"isLeaf":false,
-		"items": {
-			"pivo": {
-				"fullName":"Pivo",
+			"fullName" : "Nápoje",
+			"level" : "category",
+			"isLeaf":false,
+			"items": 
+			{
+			"alko":
+				{
+				"fullName" : "Alkoholické nápoje",
+				"level" : "subcategory",
 				"isLeaf":false,
 				"items": {
-					"pilsner_m": 	{"isLeaf":true,"fullName":"Pilsner Urquell","mnozstvi":0.5,"cena":42},
-					"pilsner_s": 	{"isLeaf":true,"fullName":"Pilsner Urquell","mnozstvi":0.3,"cena":29},
-					"kozel": 		{"isLeaf":true,"fullName":"Kozel černý lahev","mnozstvi":0.5,"cena":32},
-					"birell_tmavy": {"isLeaf":true,"fullName":"Birell 0,5 L tmavý Lahev","mnozstvi":0.5,"cena":37},
-					"birell": 		{"isLeaf":true,"fullName":"Birell 0,5 l lahev","mnozstvi":0.5,"cena":32}
-				}
-			},
-			"vino": {
-				"fullName":"Víno",
+					"pivo": {
+						"fullName":"Pivo",
+						"isLeaf":false,
+						"items": {
+							"pilsner_m": 	{"isLeaf":true,"fullName":"Pilsner Urquell","mnozstvi":0.5,"cena":42},
+							"pilsner_s": 	{"isLeaf":true,"fullName":"Pilsner Urquell","mnozstvi":0.3,"cena":29},
+							"kozel": 		{"isLeaf":true,"fullName":"Kozel černý lahev","mnozstvi":0.5,"cena":32},
+							"birell_tmavy": {"isLeaf":true,"fullName":"Birell 0,5 L tmavý Lahev","mnozstvi":0.5,"cena":37},
+							"birell": 		{"isLeaf":true,"fullName":"Birell 0,5 l lahev","mnozstvi":0.5,"cena":32}
+						}
+					},
+					"vino": {
+						"fullName":"Víno",
+						"isLeaf":false,
+						"items": {
+							"lambrusco":{"isLeaf":true,"fullName":"Lambrusco","mnozstvi":0.2,"cena":44},
+							"bile":		{"isLeaf":true,"fullName":"Víno bílé lahev","mnozstvi":0.7,"cena":150},
+							"cervene":	{"isLeaf":true,"fullName":"Víno červené lahev","mnozstvi":0.7,"cena":150}
+						}
+					},
+					"destilaty": {
+						"fullName":"Destiláty",
+						"isLeaf":false,
+						"items": {
+							"finlandia":{"isLeaf":true,"fullName":"Vodka Finlandia","mnozstvi":0.04,"cena":55},
+							"tullamore":{"isLeaf":true,"fullName":"Tullamore Dew","mnozstvi":0.04,"cena":60},
+							"tequila":	{"isLeaf":true,"fullName":"Tequila Olmeca zlatá","mnozstvi":0.04,"cena":65}
+						}
+					}
+					}
+				},
+			"nealko":
+				{
+				"fullName" : "Nealko",
+				"level" : "subcategory",
 				"isLeaf":false,
 				"items": {
-					"lambrusco":{"isLeaf":true,"fullName":"Lambrusco","mnozstvi":0.2,"cena":44},
-					"bile":		{"isLeaf":true,"fullName":"Víno bílé lahev","mnozstvi":0.7,"cena":150},
-					"cervene":	{"isLeaf":true,"fullName":"Víno červené lahev","mnozstvi":0.7,"cena":150}
+					"dzusy": {
+						"fullName":"Džusy",
+						"isLeaf":false,
+						"items": {
+							"orange":	{"isLeaf":true,"fullName":"Fresh Orange Juice","mnozstvi":0.2,"cena":55}
+						}
+					},
+					"limonady": {
+						"fullName":"Limonády",
+						"isLeaf":false,
+						"items": {
+							"sprite":	{"isLeaf":true,"fullName":"Sprite","mnozstvi":0.3,"cena":33},
+							"orangina":	{"isLeaf":true,"fullName":"Orangina","mnozstvi":0.25,"cena":36},
+							"kofola":	{"isLeaf":true,"fullName":"Kofola","mnozstvi":0.5,"cena":34}
+						}
+					},
+					"horke": {
+						"fullName":"Káva a čaj",
+						"isLeaf":false,
+						"items": {
+							"turek":	{"isLeaf":true,"fullName":"Turecká káva","mnozstvi":null,"cena":35},
+							"lungo":	{"isLeaf":true,"fullName":"Lungo","mnozstvi":"7g","cena":35},
+							"latte":	{"isLeaf":true,"fullName":"Latte Macchiato","mnozstvi":null,"cena":45}
+						}
+					},
+					"voda": {
+						"fullName":"Voda",
+						"isLeaf":false,
+						"items": {
+							"voda":		{"isLeaf":true,"fullName":"Voda sklo","mnozstvi":0.25,"cena":30},
+							"mineralka":{"isLeaf":true,"fullName":"Minerálka San Pellegrino","mnozstvi":0.75,"cena":79}
+						}
+					},
+					"energy": {
+						"fullName":"Energetické nápoje",
+						"isLeaf":false,
+						"items": { 
+							"redbull" : {"isLeaf":true,"fullName":"Red Bull","mnozstvi":0.25,"cena":59}
+						}
+					}
+					}
 				}
-			},
-			"destilaty": {
-				"fullName":"Destiláty",
-				"isLeaf":false,
-				"items": {
-					"finlandia":{"isLeaf":true,"fullName":"Vodka Finlandia","mnozstvi":0.04,"cena":55},
-					"tullamore":{"isLeaf":true,"fullName":"Tullamore Dew","mnozstvi":0.04,"cena":60},
-					"tequila":	{"isLeaf":true,"fullName":"Tequila Olmeca zlatá","mnozstvi":0.04,"cena":65}
-				}
-			}
 			}
 		},
-	"nealko":
-		{
-		"fullName" : "Nealko",
-		"level" : "subcategory",
-		"isLeaf":false,
-		"items": {
-			"dzusy": {
-				"fullName":"Džusy",
-				"isLeaf":false,
-				"items": {
-					"orange":	{"isLeaf":true,"fullName":"Fresh Orange Juice","mnozstvi":0.2,"cena":55}
-				}
-			},
-			"limonady": {
-				"fullName":"Limonády",
-				"isLeaf":false,
-				"items": {
-					"sprite":	{"isLeaf":true,"fullName":"Sprite","mnozstvi":0.3,"cena":33},
-					"orangina":	{"isLeaf":true,"fullName":"Orangina","mnozstvi":0.25,"cena":36},
-					"kofola":	{"isLeaf":true,"fullName":"Kofola","mnozstvi":0.5,"cena":34}
-				}
-			},
-			"horke": {
-				"fullName":"Káva a čaj",
-				"isLeaf":false,
-				"items": {
-					"turek":	{"isLeaf":true,"fullName":"Turecká káva","mnozstvi":null,"cena":35},
-					"lungo":	{"isLeaf":true,"fullName":"Lungo","mnozstvi":"7g","cena":35},
-					"latte":	{"isLeaf":true,"fullName":"Latte Macchiato","mnozstvi":null,"cena":45}
-				}
-			},
-			"voda": {
-				"fullName":"Voda",
-				"isLeaf":false,
-				"items": {
-					"voda":		{"isLeaf":true,"fullName":"Voda sklo","mnozstvi":0.25,"cena":30},
-					"mineralka":{"isLeaf":true,"fullName":"Minerálka San Pellegrino","mnozstvi":0.75,"cena":79}
-				}
-			},
-			"energy": {
-				"fullName":"Energetické nápoje",
-				"isLeaf":false,
-				"items": { 
-					"redbull" : {"isLeaf":true,"fullName":"Red Bull","mnozstvi":0.25,"cena":59}
-				}
-			}
-			}
-		}
-	}
-},
-"menu":
-	{
-	"fullName" : "Jídelní menu",
-	"level" : "category",
-	"isLeaf":false,
-	"items": {
-		"burgry" : {
-			"fullName":"Burgry",
-			"level" : "subcategory",
+		"menu":
+			{
+			"fullName" : "Jídelní menu",
+			"level" : "category",
 			"isLeaf":false,
 			"items": {
-				"texas": 		{"isLeaf":true,"fullName":"Texas Burger","popis":"maso, karamelizovaná cibulka, cheddar, rajče, hořčice, kečup, cibulové kroužky","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":155,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4489.jpg"},
-				"steakhouse": 	{"isLeaf":true,"fullName":"Steakhouse Burger","popis":"burger plněný vynikajícím steakovým masem na čerstvém římském salátu v rozpečené housce","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":199,"cena velky":279,"img url":"http://www.delish.cz/images/thb_view/21-img_4607.jpg"},
-				"mountain": 	{"isLeaf":true,"fullName":"Mountain Burger","popis":"dvojitá porce ementálu, bramborová placka, maso, majonéza, kečup, salát, rajče, okurčičky a cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":155,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4581.jpg"},
-				"jack": 		{"isLeaf":true,"fullName":"Jack Daniel´s Burger","popis":"maso, cheddar, salát, Jack Daniel´s omáčka, hořčice, karamelizovaná cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":150,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4534.jpg"},
-				"cheese": 		{"isLeaf":true,"fullName":"Cheeseburger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":135,"cena velky":175,"img url":"http://www.delish.cz/images/thb_view/21-img_4442.jpg"},
-				"french": 		{"isLeaf":true,"fullName":"French Burger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi maly":150,"mnozstvi velky":250,"cena maly":150,"cena velky":190,"img url":"http://www.delish.cz/images/thb_view/21-img_4574.jpg"}
-			}		
-		},
-		"extras" : {
-			"fullName":"Extras do burgru",
-			"level" : "subcategory","isLeaf":true,"items": {
-				"vejce": 	{"isLeaf":true,"fullName":"Vejce Sunrice","cena":29},
-				"slanina": 	{"isLeaf":true,"fullName":"Slanina","cena":29},
-				"psyr": 	{"isLeaf":true,"fullName":"Plísňový sýr","cena":29},
-				"cibulka": 	{"isLeaf":true,"fullName":"Karamelizovaná cibulka","cena":29},
-				"jalapenos":{"isLeaf":true,"fullName":"Jalapenos","cena":29},
-				"cheddar": 	{"isLeaf":true,"fullName":"Cheddar","cena":29},
-				"houby": 	{"isLeaf":true,"fullName":"Grilované houbičky","cena":29}
-			}			 
-		},
-		"salaty" : {
-			"fullName":"Saláty",
-			"level" : "subcategory","isLeaf":true,"items": {
-				"zahradni":	{"isLeaf":true,"fullName":"Zahradní salátek","slozeni":"mix ledového salátu a rajčat, ovoněný olivovým olejem a špetkou koření, doporučujeme místo tradiční přílohy.","cena":45,"img url":"http://www.delish.cz/images/thb_view/21-s1.jpg"},
-				"caesar":	{"isLeaf":true,"fullName":"Caesar salát","slozeni":"salát z římského salátu dle tradiční receptury doplněný o domácí caesar dresink, voňavý parmezán, křupavé krutány a kuřecí steak, vhodný jako hlavní chod.","cena":145,"img url":"http://www.delish.cz/images/thb_view/21-img_8694.jpg"}
+				"burgry" : {
+					"fullName":"Burgry",
+					"level" : "subcategory",
+					"isLeaf":false,
+					"items": {
+						"texas_s": 		{"isLeaf":true,"fullName":"Texas Burger","popis":"maso, karamelizovaná cibulka, cheddar, rajče, hořčice, kečup, cibulové kroužky","mnozstvi":150,"cena":155,"img":"http://www.delish.cz/images/thb_view/21-img_4489.jpg"},
+						"texas_m": 		{"isLeaf":true,"fullName":"Texas Burger","popis":"maso, karamelizovaná cibulka, cheddar, rajče, hořčice, kečup, cibulové kroužky","mnozstvi":250,"cena":190,"img":"http://www.delish.cz/images/thb_view/21-img_4489.jpg"},
+						"steakhouse_s": 	{"isLeaf":true,"fullName":"Steakhouse Burger","popis":"burger plněný vynikajícím steakovým masem na čerstvém římském salátu v rozpečené housce","mnozstvi":150,"cena":199,"img":"http://www.delish.cz/images/thb_view/21-img_4607.jpg"},
+						"steakhouse_m": 	{"isLeaf":true,"fullName":"Steakhouse Burger","popis":"burger plněný vynikajícím steakovým masem na čerstvém římském salátu v rozpečené housce","mnozstvi":250,"cena":279,"img":"http://www.delish.cz/images/thb_view/21-img_4607.jpg"},
+						"mountain_s": 	{"isLeaf":true,"fullName":"Mountain Burger","popis":"dvojitá porce ementálu, bramborová placka, maso, majonéza, kečup, salát, rajče, okurčičky a cibulka","mnozstvi":150,"cena":155,"img":"http://www.delish.cz/images/thb_view/21-img_4581.jpg"},
+						"mountain_m": 	{"isLeaf":true,"fullName":"Mountain Burger","popis":"dvojitá porce ementálu, bramborová placka, maso, majonéza, kečup, salát, rajče, okurčičky a cibulka","mnozstvi":250,"cena":190,"img":"http://www.delish.cz/images/thb_view/21-img_4581.jpg"},
+						"jack": 		{"isLeaf":true,"fullName":"Jack Daniel´s Burger","popis":"maso, cheddar, salát, Jack Daniel´s omáčka, hořčice, karamelizovaná cibulka","mnozstvi":150,"mnozstvi velky":250,"cena":150,"cena velky":190,"img":"http://www.delish.cz/images/thb_view/21-img_4534.jpg"},
+						"cheese_s": 		{"isLeaf":true,"fullName":"Cheeseburger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi":150,"cena":135,"img":"http://www.delish.cz/images/thb_view/21-img_4442.jpg"},
+						"cheese_m": 		{"isLeaf":true,"fullName":"Cheeseburger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi":250,"cena":175,"img":"http://www.delish.cz/images/thb_view/21-img_4442.jpg"},
+						"french_s": 		{"isLeaf":true,"fullName":"French Burger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi":150,"cena":150,"img":"http://www.delish.cz/images/thb_view/21-img_4574.jpg"},
+						"french_m": 		{"isLeaf":true,"fullName":"French Burger","popis":"maso, cheddar, salát, rajče, kečup, hořčice, relish, červená cibulka","mnozstvi":250,"cena":190,"img":"http://www.delish.cz/images/thb_view/21-img_4574.jpg"}
+					}		
+				},
+				"extras" : {
+					"fullName":"Extras do burgru",
+					"level" : "subcategory","isLeaf":false,
+					"items": {
+						"vejce": 	{"isLeaf":true,"fullName":"Vejce Sunrice","cena":29},
+						"slanina": 	{"isLeaf":true,"fullName":"Slanina","cena":29},
+						"psyr": 	{"isLeaf":true,"fullName":"Plísňový sýr","cena":29},
+						"cibulka": 	{"isLeaf":true,"fullName":"Karamelizovaná cibulka","cena":29},
+						"jalapenos":{"isLeaf":true,"fullName":"Jalapenos","cena":29},
+						"cheddar": 	{"isLeaf":true,"fullName":"Cheddar","cena":29},
+						"houby": 	{"isLeaf":true,"fullName":"Grilované houbičky","cena":29}
+					}			 
+				},
+				"salaty" : {
+					"fullName":"Saláty",
+					"level" : "subcategory","isLeaf":false,"items": {
+						"zahradni":	{"isLeaf":true,"fullName":"Zahradní salátek","slozeni":"mix ledového salátu a rajčat, ovoněný olivovým olejem a špetkou koření, doporučujeme místo tradiční přílohy.","cena":45,"img":"http://www.delish.cz/images/thb_view/21-s1.jpg"},
+						"caesar":	{"isLeaf":true,"fullName":"Caesar salát","slozeni":"salát z římského salátu dle tradiční receptury doplněný o domácí caesar dresink, voňavý parmezán, křupavé krutány a kuřecí steak, vhodný jako hlavní chod.","cena":145,"img":"http://www.delish.cz/images/thb_view/21-img_8694.jpg"}
+					}
+				},
+				"dezerty" : {
+					"fullName":"Dezerty",
+					"level" : "subcategory","isLeaf":false,
+					"items": {
+						"pohar":	{"isLeaf":true,"fullName":"Zmrzlinový pohár","slozeni":"Zmrzlina se šlehačkou a polevou","cena":55,"img":"http://www.delish.cz/images/thb_view/"},
+						"toast":	{"isLeaf":true,"fullName":"French toast","slozeni":"Tradiční severoamerický toast obalovaný ve vajíčku se skořicovo-cukrovým zábalem.","cena":59,"img":"http://www.delish.cz/images/thb_view/21-img_0415.jpg"}
+					}		 
+				}
 			}
-		},
-		"dezerty" : {
-			"fullName":"Dezerty",
-			"level" : "subcategory","isLeaf":true,"items": {
-				"pohar":	{"isLeaf":true,"fullName":"Zmrzlinový pohár","slozeni":"Zmrzlina se šlehačkou a polevou","cena":55,"img url":"http://www.delish.cz/images/thb_view/"},
-				"toast":	{"isLeaf":true,"fullName":"French toast","slozeni":"Tradiční severoamerický toast obalovaný ve vajíčku se skořicovo-cukrovým zábalem.","cena":59,"img url":"http://www.delish.cz/images/thb_view/21-img_0415.jpg"}
-			}		 
-		}
-	}
+			}
 	}
 }
 
