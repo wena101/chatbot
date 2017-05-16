@@ -3,14 +3,25 @@
 /*http://codepen.io/drehimself/pen/KdXwxR?utm_source=bypeople
 http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 
+input[type="text"]{
+    width: 90%;
+    height: 50px;
+}
+.button2{
+height: 40px;
+background-color: #E9724C;
+border: 1px solid #E9724C;
+width: 9%;
+border-radius: 10px;
+margin-bottom: 10px;
+}
 *, *:before, *:after {
   box-sizing: border-box;
 }
 .chat .chat-history {
   padding: 30px 30px 20px;
-  border-bottom: 2px solid white;
   height: 80vh;
-  overflow:hidden; overflow-y:scroll;
+  overflow:hidden;
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
