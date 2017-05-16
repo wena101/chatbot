@@ -42,6 +42,10 @@ export class MenuDataService {
 			 case 'menu_query': {
 				 return this.evaluateList(res.output.text[0]).map(parsedReply => { return {fromMe : false, text : parsedReply}; } );
 			 }
+			 case 'finish_order': {
+				 return Observable.of({fromMe : false, 
+				 text : text.replace(/(!total)/, this.cart.getTotal())});
+			 }
 			 case 'order_item': {
 				 let quantity : number = 1;
 				 let ordered : string[] = [];

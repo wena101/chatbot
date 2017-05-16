@@ -34,13 +34,13 @@ export class ConversationService {
 		}
 	  };
 	  if(this.mock)
-	  {
+	  {//order_item OBjenavam !order
 		  return Observable.of( { 
-		  intents: [{intent: "order_item", confidence : 0.578}, {intent: "hello", confidence : 0.25}], 
+		  intents: [{intent: "finish_order", confidence : 0.578}, {intent: "hello", confidence : 0.25}], 
 		  entities: [ { entity : "polozka_mnozstvi", value : "2" }, { entity : "polozka", value : "texas_m" }, 
 		  { entity : "polozka_mnozstvi", value : "3" },{ entity : "polozka_mnozstvi", value : "5" },
 		  { entity : "polozka", value : "houby" }, { entity : "polozka", value : "houby" } ],
-		  output : { text : ['OBjenavam !order (mocked from conversation.service.ts)'] }}).share();
+		  output : { text : ['Bude to !total (mocked from conversation.service.ts)'] }}).share();
 	  }
 	  else return this.http.post(this.endpoint, JSON.stringify(data), {headers: this.headers}).map(res => res.json()).share();	 
   }
