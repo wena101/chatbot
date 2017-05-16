@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 const spaces = 2;
 
 var conversation = new Conversation({
-  username: 'eb0e75c5-d9f2-4c30-81c2-daaa1692ce68',
-  password: 'PNuBy1Vc2lrj',
+  username: 'c58a6724-aa66-4b9c-8504-ec079fa656af',
+  password: 'pib67rqkfMDP',
   url: 'https://gateway.watsonplatform.net/conversation/api',
   version_date: '2016-10-21',
   version: 'v1'
@@ -138,7 +138,7 @@ app.get('/data/:subcathegory/:subsubcathegory/:itemlist/:item', function (req, r
 
 app.post('/watson/message', function(req, res) {
   console.log('--------------------------------\nmsg to watson: \n', JSON.stringify(req.body, null, 2));
-  var workspace = 'b6a1fd52-dd30-44e8-9741-986521a1cb87';
+  var workspace = 'ff313b37-f275-4128-97c1-4cdd4da0f387';
   
   var payload = {
     workspace_id: workspace,

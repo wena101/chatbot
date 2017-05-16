@@ -7,19 +7,9 @@ import 'rxjs/add/observable/of'
 @Injectable()
 export class ConversationService {
 
- // var conversation;
 
-//	private conversation = new Conversation({
-	  // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
-	  // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-//	  username: 'eb0e75c5-d9f2-4c30-81c2-daaa1692ce68',
-//	  password: 'PNuBy1Vc2lrj',
-//	  url: 'https://gateway.watsonplatform.net/conversation/api',
-//	  version_date: '2016-10-21',
-//	  version: 'v1'
-//	});
 	private context = null;
-	private mock = true;
+	private mock = false;
 	private readonly  endpoint : string = 'http://localhost:3000/watson/message';
 	headers = new Headers({'Content-Type': 'application/json'});
   
