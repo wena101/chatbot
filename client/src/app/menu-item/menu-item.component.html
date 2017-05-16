@@ -1,7 +1,19 @@
 <div>
- <h3>{{item.fullName}}</h3>
+<table style="width:100%">
+<tbody>
+<tr>
+<td>
+<br>
+ <h3 style="">{{item.fullName}}</h3>
+	<br>
   <p>{{item.popis}}</p>
-  <p>mnozstvi:{{item.mnozstvi}}</p>
-  <p>cena: {{item.cena}}</p>
-  <img src="{{item.img}}" alt="{{item.fullName}}" style="width:256px;height:256px;">
+  <p>množství: {{item.mnozstvi}} g/ml</p>
+  <p>cena: {{item.cena}} Kč</p>
+</td>
+<td>
+  <img src="{{item.img}}" alt="{{item.fullName}}" align="right" style="width:256px;height:256px;">
+</td>
+</tr>
+</tbody>
+</table>
 </div>
