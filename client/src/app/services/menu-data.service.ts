@@ -50,12 +50,13 @@ export class MenuDataService {
 				 let quantity : number = 1;
 				 let ordered : string[] = [];
 				 let queries : Observable<void>[] = [];
-				 for (let entity of res.entities)
+				 for (let entity of res.entities.sort(function(a,b) {return (a.location[0] > b.location[0]) ? 1 : ((b.location[0] > a.location[0]) ? -1 : 0);}) )
 				 {
+					 
 					 if(entity.entity == 'polozka')
 					 {
 						 const iq = quantity;
-						queries.push(
+						 queries.push(
 							this.evaluateItem(entity.value).map(item => {
 								if(item != null)
 								{
@@ -67,7 +68,10 @@ export class MenuDataService {
 						);
 						quantity = 1;
 					 }
-					 else if(entity.entity == 'polozka_mnozstvi') quantity = entity.value;
+					 else if(entity.entity == 'polozka_mnozstvi') {
+						 quantity = entity.value;
+						 console.log(entity.value);
+					 }
 				 }
 				 return Observable.forkJoin(queries, (data: any[]) => { 
 					var regexp = new RegExp(String.raw`!order:([\w/]+)`);
