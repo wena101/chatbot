@@ -138,7 +138,7 @@ app.get('/data/:subcathegory/:subsubcathegory/:itemlist/:item', function (req, r
 
 app.post('/watson/message', function(req, res) {
   console.log('--------------------------------\nmsg to watson: \n', JSON.stringify(req.body, null, 2));
-  var workspace = 'ff313b37-f275-4128-97c1-4cdd4da0f387';
+  var workspace = '70fd87a9-5970-4f3c-be3c-8b5fbb49d086';
   
   var payload = {
     workspace_id: workspace,

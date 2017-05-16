@@ -80,7 +80,7 @@ export class MenuDataService {
 			 }
 		}
 		 
-		return Observable.of({fromMe : false, text : "code flow error" });
+		return Observable.of({fromMe : false, text : "Omlouvám se, nerozumím. Formulujte Váš dotaz jinak." });
 	}
 		
 	evaluateList(watsonResp: string) : Observable<string>
